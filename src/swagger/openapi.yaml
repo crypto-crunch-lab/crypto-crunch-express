@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: SOPT API docs
+  description: SOPT SERVER SEMINAR
+  license:
+    name: Jionee
+servers:
+  - url: http://localhost:8000/ #자신의 포트번호
+
+components:
+  parameters: null
+  schemas:
+    asset:
+      properties:
+        symbol:
+          type: string
+          description: 토큰 이름
+        balance:
+          type: Long
+          description: 자산 수량
+        asset:
+          type: Long
+          description: 자산(원)
+        usdAsset:
+          type: Long
+          description: 자산(달러)
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: String
+  responses:
+    successResponse:
+        description: successful request with no data
+        content:
+          application/json:
+            schema:
+              type: object
+              example: {"status": 200, "success": true, "message": "message"}
+    BadRequest:
+      description: 잘못된 요청
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+            message:
+                type: String
+          example:
+            success: false
+            message: 잘못된 요청
+    InternalServerError:
+      description: 서버 에러
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+            message:
+                type: String
+          example:
+            success: false
+            message: 서버 내부 오류
+
+#Paths api 경로 지정
+paths: 
+  /api/v1/asset/{assetId}:
+    $ref: './asset.yaml#/~1api~1v1~1asset~1{assetId}'

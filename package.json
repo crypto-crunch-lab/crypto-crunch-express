@@ -6,7 +6,9 @@
   "scripts": {
     "start": "ts-node src",
     "dev": "nodemon",
-    "build": "tsc && node dist"
+    "build": "tsc && node dist",
+    "api-docs": "swagger-cli bundle ./src/swagger/openapi.yaml --outfile dist/swagger.yaml --type yaml",
+    "predev": "npm run api-docs"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,8 @@
   "homepage": "https://github.com/crypto-crunch-lab/crypto-crunch-express#readme",
   "devDependencies": {
     "@types/node": "^17.0.25",
+    "@types/swagger-ui-express": "^4.1.3",
+    "@types/yamljs": "^0.2.31",
     "nodemon": "^2.0.16",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
@@ -30,6 +34,9 @@
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "node-bithumb": "^2.1.0",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "swagger-cli": "^4.0.4",
+    "swagger-ui-express": "^4.4.0",
+    "yamljs": "^0.3.0"
   }
 }

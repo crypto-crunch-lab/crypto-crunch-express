@@ -1,5 +1,5 @@
-import PortfolioService from "./PortfolioSerice";
+import AssetService from "./AssetSerice";
 
 export {
-    PortfolioService,
+    AssetService,
 }

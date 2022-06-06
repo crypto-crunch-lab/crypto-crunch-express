@@ -1,8 +1,8 @@
 import { Router } from "express";
-import PortfolioRouter from "./PortfolioRouter"
+import AssetRouter from "./AssetRouter"
 
 const router = Router();
 
-router.use('/portfolio', PortfolioRouter);
+router.use('/api/v1/asset', AssetRouter);
 
 export default router;

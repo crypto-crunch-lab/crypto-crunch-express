@@ -1,0 +1,60 @@
+/api/v1/asset/{assetId}:
+  get:
+    tags:
+      - Asset
+    summary: 자산 조회
+    consumes:
+      - application/json
+    parameters:
+      - in: path
+        name: assetId
+        required: true
+        description: asset id
+        schema:
+          type: string
+    responses:
+      '200':
+        description: 자산 조회 성공
+        content:
+          application/json:
+            schema:
+              type: object
+              example: {
+                  "status": 201,
+                  "success": true,
+                  "message": "자산 조회 성공",
+                  "data": {
+                    "assets": [
+                      {
+                          "symbol": "KRW",
+                          "balance": 157.1,
+                          "asset": 157.1,
+                          "usdAsset": 0.1257383425909622
+                      },
+                      {
+                          "symbol": "MATIC",
+                          "balance": 19,
+                          "price": 817,
+                          "usdAsset": 12.424164812472986
+                      }
+                    ],
+                  "totalAsset": 12.549903155063948
+                  }
+              }
+      '400':
+        description: 자산 조회 실패
+        content:
+          application/json:
+            schema:
+              type: object
+              example: {
+                "status": 400,
+                "success": false,
+                "message": "API 키가 유효하지 않습니다."
+              }
+
+      '500':
+        $ref: './openapi.yaml#/components/responses/InternalServerError'
+
+    
+      

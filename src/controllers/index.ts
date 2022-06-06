@@ -1,5 +1,5 @@
-import PortfolioController from "./PortfolioController";
+import AssetController from "./AssetController";
 
 export {
-    PortfolioController
+    AssetController
 }

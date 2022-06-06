@@ -3,10 +3,9 @@ const message = {
     NOT_FOUND: '존재하지 않는 자원',
     BAD_REQUEST: '잘못된 요청',
     INTERNAL_SERVER_ERROR: '서버 내부 오류',
-    CREATE_USER_SUCCESS: '유저 생성 성공',
-    UPDATE_USER_SUCCESS: '유저 업데이트 성공',
-    READ_USER_SUCCESS: '유저 조회 성공',
-    DELETE_USER_SUCCESS: '유저 삭제 성공'
+    INVALID_API_KEY: 'API 키가 유효하지 않습니다.',
+    GET_ASSET_SUCCESS: '자산 조회 성공',
+    GET_ASSET_FAIL: "자산 조회 실패",
 }
 
 export default message;
