@@ -1,10 +1,10 @@
 openapi: 3.0.0
 info:
   version: 1.0.0
-  title: SOPT API docs
-  description: SOPT SERVER SEMINAR
+  title: Crypto-Crunch-express API docs
+  description: 크립토 크런치 express api docs
   license:
-    name: Jionee
+    name: Crypto-Crunch
 servers:
   - url: http://localhost:8000/ #자신의 포트번호
 

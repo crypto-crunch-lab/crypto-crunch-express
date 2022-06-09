@@ -10,14 +10,14 @@ const getBalance = async (id: Number) => {
     const prod: boolean = process.env.NODE_ENV === ' production';
     let url
     if (prod) {
-        url = "http://server.crypto-crunch-tech.com:8080/api/v1/asset/key/${id}"
+        url = `http://server.crypto-crunch-tech.com:8080/api/v1/asset/key/${id}`
     } else {
         url = `http://localhost:8080/api/v1/asset/key/${id}`
     }
     try {
         const coreResponse = await axios({
             method: "GET",
-            url: url,
+            url: `http://server.crypto-crunch-tech.com:8080/api/v1/asset/key/${id}`,
         })
         const exchangeOptions = {
             method: "GET",
